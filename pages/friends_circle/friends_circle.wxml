@@ -1,0 +1,74 @@
+<!--pages/friends_circle/friends_circle.wxml-->
+<view class='bg'>
+  <image src='icon/帮友圈头部.jpg' mode='cover'></image>
+</view>
+<!-- 消息 通讯录导航条 -->
+<scroll-view class="Tab" scroll-x="true">
+  <view class="navbar">
+    <text wx:for="{{navbar}}" wx:key="" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" disable="{{itemDisable}}" bindtap="navbarTap">{{item}}</text>
+  </view>
+</scroll-view>
+
+<!-- 消息 -->
+<view hidden='{{currentTab!=0}}'>
+  <scroll-view scroll-y="true" style='height:{{windowHeight-220}}rpx;'>
+    <view class='messagelist'>
+      <view wx:for="{{message}}" wx:key="">
+        <navigator url='/pages/new_chat/new_chat?toOpenid={{item.openID}}&name={{item.name}}'>
+          <view class='messageitem' hover-class='hoveritem'>
+            <!-- 单个消息左边 -->
+            <view class='messageleft'>
+              <image class='touxiang' src='{{item.avatar}}'></image>
+              <view class='detail'>
+                <view class='top'>{{item.name}}</view>
+                <view class='bottom'>{{item.content}}</view>
+              </view>
+            </view>
+            <!-- 单个消息右边 -->
+            <view class='messageright'>{{item.created_at}}</view>
+          </view>
+        </navigator>
+      </view>
+      <view class='messageitem' hover-class='hoveritem'>
+        <!-- 单个消息左边
+        <view class='messageleft'>
+          <image class='touxiang' src='/images/收入.png' mode='cover'></image>
+          <view class='detail'>
+            <view class='top'>系统消息</view>
+            <view class='bottom'>已到账200</view>
+          </view>
+        </view> -->
+        <!-- 单个消息右边 -->
+        <!-- <view class='messageright'>6月1日</view> -->
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 通讯录 -->
+<view class='list' hidden='{{currentTab!=1}}'>
+
+  <scroll-view class="listgroup" scroll-y="true" style="height:{{windowHeight-220}}rpx;" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class='listitem' wx:for="{{friends}}" wx:key="letter" wx:for-item="List">
+      <view id='{{List.letter}}'>
+        <view class='text'>{{List.letter}}</view>
+
+        <view wx:for="{{List.person}}" wx:key="">
+          <navigator class='listperson' hover-class='hoveritem' url='/pages/user_card/user_card?toOpenid={{item.openID}}'>
+            <image class='touxiang' src='{{item.avatar}}'></image>
+            <view class='right'>
+              <view class='nickname'>{{item.name}}</view>
+            </view>
+          </navigator>
+        </view>
+
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 右边字母列表 -->
+  <view class='letterlist'>
+    <view class='letter {{indexId==i ? "active":""}}' wx:for="{{letter}}" wx:key="" wx:for-item="i" id="{{i}}" catchtouchstart="touchstart" catchtouchmove="touchmove" catchtouchend="touchend">{{i}}</view>
+  </view>
+
+
+</view>

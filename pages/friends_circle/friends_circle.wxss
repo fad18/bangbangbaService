@@ -1,0 +1,185 @@
+/* pages/friends_circle/friends_circle.wxss */
+.bg image{
+  width: 100%;
+  height: 130rpx;
+}
+.Tab .navbar {
+  display: flex;
+  flex-direction: row;  
+ 
+}
+.Tab .navbar .item{
+  width: 50%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 79rpx;
+  font-size: 35rpx;
+  color:rgb(149, 160, 182);
+}
+.Tab .navbar .item.active{
+   background: linear-gradient(to right,#4837cb, #dffcfa);        
+  -webkit-background-clip: text;        
+  color: transparent;
+
+}
+.Tab .navbar .item.active::after{  
+      content: "";  
+      display: block; 
+      height: 1rpx;
+      background:-webkit-linear-gradient(to right, #0498de, #22d9ba);  
+      background: linear-gradient(to right, #0498de, #22d9ba);   
+     } 
+
+/* 消息 */
+.messagelist{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.messagelist .messageitem{
+   display: flex;
+   flex-direction: row;
+    /* border-bottom: 1rpx solid #ccc;  */
+    padding-top: 20rpx;
+     
+}
+/* 单个消息左边 */
+.messagelist .messageitem .messageleft{
+  display: flex;
+  flex-direction: row;
+  padding-left: 40rpx;
+}
+.messagelist .messageitem .messageleft .touxiang{
+   
+   border-radius: 50%;
+   height: 100rpx;
+   width: 100rpx;
+}
+.messagelist .messageitem .messageleft .detail{
+   
+  display: flex;
+  flex-direction: column;
+  width: 480rpx;
+  margin-left: 35rpx;
+}
+.messagelist .messageitem .messageleft .detail .top{
+  font-size: 40rpx;
+  
+  color: rgb(2, 4, 51);
+   overflow:hidden;
+   text-overflow:ellipsis;
+   white-space:nowrap;
+}
+.messagelist .messageitem .messageleft .detail .center{
+  font-size: 32rpx;
+   overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.messagelist .messageitem .messageleft .detail .bottom{
+  font-size: 30rpx;
+  color: rgb(149, 160, 182);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.messagelist .messageitem .messageleft .detail view{
+  height: 50rpx;line-height: 50rpx;
+  width: 480rpx;
+}
+
+/* 单个消息右边 */
+.messagelist .messageitem .messageright{
+  font-size: 30rpx;
+  color: rgb(149, 160, 182);
+  white-space:nowrap;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 通讯录 */
+.list .listgroup{
+   
+  display: flex;
+  flex-direction: column;
+  
+}
+::-webkit-scrollbar {
+     display: none;
+}
+/* 右边字母索引 */
+.list .letterlist{
+  position: fixed;
+  right: 0px;
+  top: 230rpx;
+  color: rgb(8, 154, 226);
+  font-size: 25rpx;
+  text-align: center;
+  
+}
+.list .letterlist .letter.active{
+  background-color: rgb(8, 154, 226);
+  color: white;
+  border-radius: 50%;
+}
+
+/* 左边联系人 */
+.list .listgroup .listitem{
+  
+}
+.list .listgroup .listitem .text{
+   color:rgb(51, 51, 51);
+   padding-left: 25rpx;
+}
+.list .listgroup .listitem .listperson{
+  display: flex;
+  flex-direction: row;
+  padding-top: 25rpx;
+ padding-left: 25rpx;
+}
+
+.list .listgroup .listitem .listperson image{
+   width: 100rpx;
+   height: 100rpx;
+   border-radius: 50%;
+   background: rgb(176, 245, 176);
+ 
+}
+.list .listgroup .listitem .listperson .right{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  width: 500rpx;
+  justify-content: center;
+}
+.list .listgroup .listitem .listperson .right .nickname{
+  color: rgb(51, 51, 51);
+  font-size: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-family: "黑体";
+
+}
+.list .listgroup .listitem .listperson .right .signature{
+  color: rgb(136, 136, 136);
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+} 
+
+.hoveritem{
+  background: #f7f7f7;
+  opacity: 0.9;
+}

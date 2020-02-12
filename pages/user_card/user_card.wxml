@@ -1,0 +1,26 @@
+<!--pages/user_card/user_card.wxml-->
+<view class='top'>
+  <!-- 头像 -->
+  <image class='touxiang' src='{{userInfo.avatar}}' mode='cover'></image>
+  <!-- 信息 -->
+  <view class='userinfo'>
+    <view class='nick'>
+      <view class='nickName'>{{userInfo.name}}</view>
+      <view wx:if='{{userInfo.sex===1}}'>
+        <image src='icon/男.jpg' mode='cover'></image>
+      </view>
+      <view wx:else>
+        <image src='icon/女.jpg' mode='cover'></image>
+      </view>
+    </view>
+    <view class='text'>姓名：{{userInfo.real_name}}</view>
+    <view class='text'>学号：{{userInfo.uid}}</view>
+    <view class='text'>学院：{{userInfo.unit}}</view>
+  </view>
+</view>
+
+<navigator url='/pages/new_chat/new_chat?toOpenid={{userInfo.openid}}&name={{userInfo.name}}' hover-class='hoveritem'>
+  <view class='chat'>发消息</view>
+</navigator>
+<view class='chat' hover-class='hoveritem' bindtap='toRequest' wx:if='{{!isfrend}}'>添加好友</view>
+  <view class='delete' bindtap='delete' wx:else>删除好友</view>

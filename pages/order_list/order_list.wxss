@@ -1,0 +1,134 @@
+/* pages/order_list/order_list.wxss */
+/*整体背景颜色设置,overflow参数使得溢出页面时也生效*/
+page{
+  height: auto;
+  overflow: auto;
+  background-color:  rgb(228, 227, 227);
+}
+
+/*开头图片样式*/
+.head_img{
+  width: 100%;
+  height: 350rpx;
+}
+
+.head_img>image{
+  width: 100%;
+  height: 100%;
+}
+
+/*搜索栏样式*/
+.flex1{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(49, 137, 234);
+  /*padding: 10rpx 0 0 0;*/
+}
+.search{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  border: 1rpx solid #dadada;
+  border-radius: 50rpx;
+  padding: 10rpx;
+  background-color:white;
+}
+
+/*选择栏样式*/
+.select_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  background-color:rgb(109, 164, 250);
+  padding: 20rpx;
+  color: white;
+  text-align: center;
+}
+
+.select_box>picker{
+  width: 50%;
+  border-right:1rpx solid white;
+}
+
+.select_box>view{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.select_box>view>image{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.rotateRight{
+  transform: rotate(180deg);
+}
+
+/*订单卡片式样式设计*/
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.list_item{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.row>view>image{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.detail{
+  border-top: 1rpx solid #dadada;
+}
+
+.row1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.head{
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+  color: rgb(119, 169, 253);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content{
+  color: rgb(196, 196, 196);
+}
+
+.price{
+  color: rgb(102, 102,102);
+  font-size: 35rpx;
+}
+
+/*置顶按钮样式*/
+.top_button{
+  position: fixed;
+  bottom: 5rpx;
+  right: 0;
+}
+
+.top_button>image{
+  width: 120rpx;
+  height: 120rpx;
+}

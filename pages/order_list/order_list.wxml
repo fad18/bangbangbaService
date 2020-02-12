@@ -1,0 +1,55 @@
+<!--pages/order_list/order_list.wxml-->
+<view>
+  <view class='flex1'>
+    <view class='search'>
+      <icon class='search_icon' size='15' type='search'></icon>
+      <input placeholder='请输入搜索内容' type='text' bindconfirm='search'></input>
+    </view>
+  </view>
+
+  <view class='head_img'>
+    <image src='icon/订单导航图.jpg'></image>
+  </view>
+
+  
+  <!--选择栏，picker组件和酬劳排序-->
+  <view class='select_box'>
+    <picker bindchange='kindChange' value='{{index}}' range='{{kind}}'>
+      <view class='select'>
+        {{kind[index]}}
+      </view>
+    </picker>
+    <view class='sort' bindtap='moneySort'>
+      <text>酬劳排序</text>
+      <image src='icon/筛选箭头.png' class="{{selectArea ? 'rotateRight' :''}}"></image>
+    </view>
+  </view>
+
+  <!--订单列表实现-->
+  <view class='order_list'>
+    <block wx:for='{{data_list}}' wx:key='list' wx:for-item='item' wx:if='{{data_list}}'>
+      <view class='list_item'>
+        <view class='row'>
+          <view class='head'>【{{item.type}}】{{item.title}}</view>
+          <view class='price'>酬劳：{{item.price}}元</view>
+        </view>
+        <view class='content'>发布人：{{item.provider_user.name}}</view>
+        <view class='content'>电话：{{item.provider_user.phone}}</view>
+        <view class='row detail' data-id='{{item.id}}' bindtap='jump'>
+          <view class='row1'>
+            <image src='icon/查看详情.png'></image>
+            <view class='price'>查看详情</view>
+          </view>
+          <view>
+            <image src='icon/查看详情箭头.png'></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!--悬浮置顶按钮-->
+  <view class='top_button' bindtap='goTop' wx:if='{{topStatus}}'>
+    <image src='icon/顶部.png'></image>
+  </view>
+</view>

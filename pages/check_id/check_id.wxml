@@ -1,0 +1,51 @@
+<!--pages/check_id/check_id.wxml-->
+<view class='topbg'>
+  <image src='icon/实名认证背景.jpg' mode='cover'></image>
+</view>
+<scroll-view scroll-y="true" style='height:{{windowHeight-158}}rpx'>
+  <form class='scroll' bindsubmit='send'>
+    <!-- 学号 -->
+    <view class='inputview'>
+      <view class='text'>学号：</view>
+      <input bindinput='setNumber' type='number' name='number' placeholder='学号'></input>
+    </view>
+
+    <!-- 学院 -->
+    <view class='inputview'>
+      <view class='text'>学院：</view>
+      <input bindinput='setCollege' type='text' name='college' placeholder='所处学院'></input>
+    </view>
+
+    <!-- 姓名 -->
+    <view class='inputview'>
+      <view class='text'>姓名：</view>
+      <input bindinput='setName' type='text' name='name' placeholder='真实姓名'></input>
+    </view>
+
+    <!-- 性别 -->
+    <view class='radio'>
+      <radio-group name="gender" bindchange="setGender">
+        <label>
+          <radio value='男'>男</radio>
+          <radio value='女'>女</radio>
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 手机号 -->
+    <view class='inputview'>
+      <view class='text'>手机号：</view>
+      <input bindinput='setPhone' type='number' name='phone' placeholder='+86'></input>
+    </view>
+
+    <!-- 验证码 -->
+    <view class="inputview">
+      <input class="inputCode" bindinput='setCode' maxlength="6" name="code" placeholder='验证码' />
+      <button class="getcode" bindtap="bindButtonTap" disabled='{{disabled}}' style="color{{color}}">{{text}}</button>
+    </view>
+    <!-- 提交 -->
+    <view class='button'>
+      <button form-type='submit' type="defualt" size="min">提交认证</button>
+    </view>
+  </form>
+</scroll-view>

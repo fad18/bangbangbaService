@@ -1,0 +1,89 @@
+<!--pages/create_order/create_order.wxml-->
+<view class='bg'>
+  <form bindsubmit='formSubmit'>
+    <view class='card_style'>
+
+      <view class='subtitle'>
+        <image src='icon/蓝条.png'></image>
+        <view>基本信息</view>
+      </view>
+
+      <view class='row'>
+        <view>分类：</view>
+        <picker mode='selector' range='{{kind}}' value='{{index}}' bindchange='kindChange' name='kind'>
+          <view wx:if='{{!index}}' class='tips'>
+            必填，选择一个种类!
+          </view>
+          <view wx:if='{{index}}'>
+            {{kind[index]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class='row'>
+        <view>截止日期：</view>
+        <picker mode='date' value='{{date}}' bindchange='dateChange' start='{{currentDate}}' end='2099-12-31' name='date'>
+          <view wx:if='{{!date}}' class='tips'>
+            必填，选择截止日期!
+          </view>
+          <view>{{date}}</view>
+        </picker>
+      </view>
+
+      <view class='row'>
+        <view>截止时间：</view>
+        <picker mode='time' value='{{time}}' bindchange='timeChange' start='{{currentTime}}' end='23:59' name='time'>
+          <view wx:if='{{!time}}' class='tips'>
+            必填，选择截止时间!
+          </view>
+          <view>{{time}}</view>
+        </picker>
+      </view>
+
+      <!--<view class='address'>
+      </view>-->
+
+      <view class='row'>
+        <view>酬金：</view>
+        <input type='digit' placeholder='请输入要支付的酬金' name='price' bindblur='inputPrice' class='input'></input>
+        <view>元</view>
+      </view>
+
+      <view class='row'>
+        <view>联系电话：</view>
+        <input type='number' placeholder='请输入联系方式' name='phone' class='input'></input>
+      </view>
+    </view>
+
+    <view class='card_style position'>
+
+      <view class='subtitle'>
+        <image src='icon/蓝条.png'></image>
+        <view>订单详情</view>
+      </view>
+
+      <view class='row'>
+        <view>订单标题：</view>
+        <input type='text' placeholder='字数不超过十个字' maxlength='10' name='title' class='input'></input>
+      </view>
+
+      <view class='content'>
+        <view>订单内容：</view>
+        <textarea placeholder='字数不超过100个字' maxlength='100' name='content'></textarea>
+      </view>
+
+      <view>
+        <view>上传图片：</view>
+        <image src='icon/添加.png' bindtap='chooseImage' class='image'></image>
+        <block wx:for='{{imgPath}}' wx:key='imgPath' wx:for-index='index'>
+          <image src='{{item}}' class='image' data-index='{{index}}' bindtap='cancel'></image>
+        </block>
+      </view>
+    </view>
+
+    <view class='submit_button'>
+      <view>服务费￥{{servicePrice}}元,合计￥{{totalPrice}}元</view>
+      <button form-type='submit' bindtap='formSubmit'>提交</button>
+    </view>
+  </form>
+</view>

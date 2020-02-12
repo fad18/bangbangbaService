@@ -1,0 +1,80 @@
+<!--pages/discovery/discovery.wxml-->
+<!--整体使用flex竖向布局-->
+<view class='flex_column'>
+<!--第一块是搜索栏-->
+  <view class='flex1'>
+    <view class='search'>
+      <icon class='search_icon' size='15' type='search'></icon>
+      <input placeholder='请输入搜索内容' type='text' bindconfirm='search'></input>
+    </view>
+  </view>
+
+<!--第二块是滚动图片-->
+  <view class='swiper_picture'>
+    <swiper indicator-dots='true' autoplay='true' interval='4000' duration='1000' circular='true'>
+      <block wx:for="{{imgURL}}" wx:if="{{imgURL.length>0}}" wx:key="imageURL">
+        <swiper-item>
+          <image src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+<!--第三块是功能菜单-->
+  <view class='function_menu'>
+    <view>
+      <image src='icon/最新订单.png' data-kind='5' data-url='../order_list/order_list?index=' bindtap='jump'></image>
+      <text>最新订单</text>
+    </view>
+    <view>
+      <image src='icon/帮友在线.png'></image>
+      <text>帮友在线</text>
+    </view>
+    <view>
+      <image src='icon/规则帮助.png'></image>
+      <text>规则帮助</text>
+    </view>
+    <view>
+      <image src='icon/我的订单.png' data-kind='5' data-url='../my_order/my_order?index=' bindtap='jump'></image>
+      <text>我的订单</text>
+    </view>
+  </view>
+
+<!--第四、五块是接单、下单模块-->
+<!--使用flex布局达到表格的显示效果，这里我是以一竖列为小单位，而不是一行-->
+  <view class='place_order'>
+    <view class='table'>
+      <view class='tc'>
+        <view class='th'>
+          <image src='icon/下单.jpg' data-kind='5' data-url='../create_order/create_order?index=' bindtap='jump'></image>
+        </view>
+      </view>
+      <view class='tc'>
+        <view class='td' data-kind='0' data-url='../create_order/create_order?index=' bindtap='jump'>帮我跑腿</view>
+        <view class='td' data-kind='3' data-url='../create_order/create_order?index=' bindtap='jump'>便利生活</view>
+      </view>
+      <view class='tc'>
+        <view class='td td_right1' data-kind='2' data-url='../create_order/create_order?index=' bindtap='jump'>帮我学习</view>
+        <view class='td td_right2' data-kind='5' data-url='../create_order/create_order?index=' bindtap='jump'>全部</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='take_order'>
+    <view class='table'>
+      <view class='tc'>
+        <view class='th'>
+          <image src='icon/接单.jpg' data-kind='5' data-url='../order_list/order_list?index=' bindtap='jump'></image>
+        </view>
+      </view>
+      <view class='tc'>
+        <view class='td' data-kind='0' data-url='../order_list/order_list?index=' bindtap='jump'>我来跑腿</view>
+        <view class='td' data-kind='3' data-url='../order_list/order_list?index=' bindtap='jump'>便利生活</view>
+      </view>
+      <view class='tc'>
+        <view class='td td_right1' data-kind='2' data-url='../order_list/order_list?index=' bindtap='jump'>我来辅导</view>
+        <view class='td td_right2' data-kind='5' data-url='../order_list/order_list?index=' bindtap='jump'>全部</view>
+      </view>
+    </view>
+  </view>
+</view>

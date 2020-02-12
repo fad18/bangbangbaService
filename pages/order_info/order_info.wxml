@@ -1,0 +1,54 @@
+<!--pages/order_info/order_info.wxml-->
+<view class='bg col'>
+  <view class='swiper_picture'>
+    <swiper indicator-dots='true' autoplay='true' interval='4000' duration='1000' circular='true' class='fill'>
+      <block wx:for='{{img}}'>
+        <swiper-item>
+          <image src='{{item}}' mode='scaleToFill' class='fill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='s_d col card_style'>
+    <view class='subtitle'>
+      <image src='icon/蓝条.png'></image>
+      <view>【{{kind[item[0].type]}}】{{item[0].title}}</view>
+    </view>
+
+    <view class='grey mag'>用户名：{{item[0].provider_user.name}}</view>
+    <view class='red mag'>￥{{item[0].price}}</view>
+    <view class='mag'>{{status[item[0].status]}} | 截止时间 {{item[0].deadline}}</view>
+    <view class='grey mag'>联系电话：{{item[0].phone}}</view>
+  </view>
+
+  <view class='m_d card_style'>
+
+    <view class='subtitle'>
+      <image src='icon/蓝条.png'></image>
+      <view>订单详情</view>
+    </view>
+
+    <view class='mag'>{{item[0].content}}</view>
+  </view>
+
+  <view class='pick_button' wx:if='{{button==1}}'>
+    <button bindtap='takeOrder'>立即接单</button>
+    <view class='mode' bindtap='jump'>
+      <image src='icon/personal.png' mode=''></image>
+      <text>个人信息</text>
+    </view>
+  </view>
+
+  <view class='pick_button' wx:if='{{button==2}}'>
+    <button bindtap='destoryOrder'>删除订单</button>
+  </view>
+
+  <view class='pick_button' wx:if='{{button==3}}'>
+    <button bindtap='confirmOrder'>订单完成</button>
+    <view class='mode' bindtap='jump'>
+      <image src='icon/personal.png' mode=''></image>
+      <text>个人信息</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/new_chat/new_chat.wxml-->
+<scroll-view class='newsGroupo' scroll-y="true" scroll-top="{{toView}}" style="height:{{windowHeight-110}}rpx;" scroll-with-animation="true">
+  <view wx:for="{{newsList}}" wx:key="">
+    <!-- 自己发的消息 -->
+    <view wx:if="{{item.from_id == openId}}" class='news_right'>
+      <!-- 消息模块 -->
+      <view class='msg'>
+        <view class='message'>{{item.content}}</view>
+        <view class='aa'></view>
+      </view>
+      <!-- 头像 -->
+     <image  class='avatar' src='{{item.avatar}}'></image>
+    </view>
+
+    <!-- 接受的消息 -->
+    <view wx:else class='news_left'>
+      <!-- 头像 -->
+      <image  class='avatar' src='{{item.avatar}}'></image>
+     <!-- 消息模块 -->
+      <view class='msg'>
+        <view class='aa'></view>
+        <view class='message'>{{item.content}}</view>
+      </view> 
+    </view>
+  </view>
+  <view id="flag"></view>
+</scroll-view>
+
+<form bindreset='cleanInput' class='bottomClass'>
+  <input class='input' type="text" placeholder="请输入聊天内容" bindinput='setText' value='{{text}}'></input>
+  <button class='sendButton' bindtap='sendMessage' formType="reset" hover-class='buttonHover' size='small'>发送</button>
+</form>

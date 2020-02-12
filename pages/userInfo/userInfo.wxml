@@ -1,0 +1,44 @@
+<!--pages/userInfo/userInfo.wxml-->
+<form class='scroll' bindsubmit='send'>
+  <!-- 学号 -->
+  <view class='inputview'>
+    <view class='text'>学号：</view>
+    <input bindinput='setNumber' type='number' name='number' placeholder='{{userInfo.uid}}' disabled='{{writeDisabled}}' placeholder-style='color:{{color}}'></input>
+  </view>
+
+  <!-- 学院 -->
+  <view class='inputview'>
+    <view class='text'>学院：</view>
+    <input bindinput='setCollege' type='text' name='college' placeholder='{{userInfo.unit}}' disabled='{{writeDisabled}}' placeholder-style='color:{{color}}'></input>
+  </view>
+
+  <!-- 姓名 -->
+  <view class='inputview'>
+    <view class='text'>姓名：</view>
+    <input bindinput='setName' type='text' name='name' placeholder='{{userInfo.real_name}}' disabled='{{writeDisabled}}' placeholder-style='color:{{color}}'></input>
+  </view>
+
+  <!-- 性别 -->
+  <view class='radio'>
+    <radio-group name="gender" bindchange="setGender">
+      <label>
+        <radio value='男' checked='{{userInfo.sex===1}}' disabled='{{writeDisabled}}'>男</radio>
+        <radio value='女' checked='{{userInfo.sex===0}}' disabled='{{writeDisabled}}'>女</radio>
+      </label>
+    </radio-group>
+  </view>
+
+  <!-- 手机号 -->
+  <view class='inputview' hidden='{{phonehidden}}'>
+    <view class='text'>手机号：</view>
+    <input bindinput='setPhone' type='number' name='phone' placeholder='认证时的手机号'></input>
+  </view>
+
+  <!-- 提交 -->
+  <view class='button'>
+    <button type='primary' size="min" bindtap='write' hidden='{{!disabled}}'>修改</button>
+    <button form-type='submit' type="primary" size="min" hidden='{{disabled}}'>提交修改</button>
+  </view>
+  <navigator url='../check_id/check_id' class='forget'>重新认证
+  </navigator>
+</form>

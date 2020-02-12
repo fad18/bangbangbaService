@@ -1,0 +1,70 @@
+/* pages/user_card/user_card.wxss */
+.top{
+  display: flex;
+  flex-direction: row;
+  height: 280rpx;
+  border-bottom: 1rpx solid #ccc;
+  align-items: center;
+  box-shadow: 0px 0px 50rpx 5rpx #f2f2f2;
+}
+.top .touxiang{
+  width: 150rpx;
+  height: 150rpx;
+ 
+  margin-left:40rpx; 
+  border-radius: 15rpx;
+}
+.top .userinfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+}
+.top .userinfo .nick{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50rpx;
+}
+.top .userinfo .nick .nickName{
+  font-size: 45rpx;
+  font-weight: bold;
+  font-family: "宋体";
+  line-height: 45rpx;
+}
+.top .userinfo .nick image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.top .userinfo .text{
+  height: 35rpx;
+  font-size: 35rpx;
+  line-height: 35rpx;
+  color: #238679;
+  font-family: "微软雅黑";
+  margin-top: 10rpx;
+}
+.chat{
+  height: 120rpx;
+  margin-top: 30rpx;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+ box-shadow: 0px 0px 50rpx 5rpx #f2f2f2;
+ text-align: center;
+ line-height: 120rpx;
+ font-size: 40rpx;
+ font-family: "微软雅黑";
+ color:rgb(86, 12, 136);
+}
+.hoveritem{
+  background: #ece8e8;
+  opacity: 0.9;
+}
+.delete{
+  color: red;
+  font-size: 40rpx;
+  font-family: "微软雅黑"; 
+  text-align: center;
+  height: 120rpx;
+  line-height: 120rpx;
+}

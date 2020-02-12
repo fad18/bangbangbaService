@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/check_token/check_token",
+    "pages/logs/logs",
+    "pages/discovery/discovery",
+    "pages/friends_circle/friends_circle",
+    "pages/personal_center/personal_center",
+    "pages/order_list/order_list",
+    "pages/create_order/create_order",
+    "pages/my_order/my_order",
+    "pages/order_info/order_info",
+    "pages/check_id/check_id",
+    "pages/userInfo/userInfo",
+    "pages/user_card/user_card"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "帮帮吧",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#DC143C",
+    "borderStyle": "white",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/discovery/discovery",
+        "text": "发现",
+        "iconPath": "pages/tabBar_icon/discovery.png",
+        "selectedIconPath": "pages/tabBar_icon/discovery_selected.png"
+      },
+      {
+        "pagePath": "pages/friends_circle/friends_circle",
+        "text": "帮友圈",
+        "iconPath": "pages/tabBar_icon/friends.png",
+        "selectedIconPath": "pages/tabBar_icon/friends_selected.png"
+      },
+      {
+        "pagePath": "pages/personal_center/personal_center",
+        "text": "我的",
+        "iconPath": "pages/tabBar_icon/personal.png",
+        "selectedIconPath": "pages/tabBar_icon/personal_selected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

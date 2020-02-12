@@ -1,0 +1,84 @@
+<!--pages/myhome/myhome.wxml-->
+<!-- 顶部 -->
+<view class='header'>
+  <view class='headertop'>
+    <!-- <view class='left'><image src='icon/对话框.jpg' mode='cover'></image></view> -->
+    <!-- <view class='right' bindtap='toSet'><image src='icon/设置.jpg' mode='cover'></image></view> -->
+  </view>
+  <view class='headercenter'>
+    <view class='touxiang'>
+      <image class='userInfo-avatar' src='{{userInfo.avatarUrl}}' mode='cover'></image>
+    </view>
+    <view class='message'>
+      <view class='messagetop'>
+        <text>{{userInfo.nickName}}</text>
+        <!-- <view class='write'><image src='icon/修改.jpg' mode='cover'></image></view> -->
+      </view>
+      <view class='messagebottom'>普通会员</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 底部 -->
+<view class='bottom'>
+  <!-- 底部头部 -->
+  <view class='bottomheader' >
+    <view data-index1='2' bindtap='jump'>
+      <view class='one'>
+        <image src='icon/地址.jpg'></image>
+        <text>我接过的</text>
+      </view>
+    </view>
+
+    <view class='three' data-index1='1' bindtap='jump'>
+      <view class='one'>
+        <image src='icon/退款.jpg'></image>
+        <text>我发布的</text>
+      </view>
+    </view>
+
+    <view data-index1='0' bindtap='jump'>
+      <view class='one'>
+        <image src='icon/全部订单.jpg'></image>
+        <text>全部订单</text>
+      </view>
+    </view>
+
+  </view>
+  <!-- 底部中部 -->
+  <view class='bottomcenter'>
+    <view class='bottomcenterleft'>
+      <view class='lefttop'>个人资料</view>
+      <view class='leftbottom'>真棒! 你的资料完善度达到80%，还差一步就完美了啦~~</view>
+    </view>
+    <view class='bottomcenterright' bindtap='toIdentity'>
+      <view>前往查看</view>
+      <view>----></view>
+    </view>
+  </view>
+
+  <!-- 底部的底部 -->
+  <view class='bottombottom'>
+    <view class='wenzi'>更多服务</view>
+    <view class='nav'>
+      <view class='navm'>
+        <image src='icon/钱包.jpg'></image>
+        <view>我的钱包</view>
+      </view>
+      <view class='navm'>
+        <image src='icon/关注心.jpg'></image>
+        <view>我的收藏</view>
+      </view>
+      <view class='navm'>
+        <image src='icon/？.jpg'></image>
+        <view>帮助中心</view>
+      </view>
+      <view class='navm'>
+        <image src='icon/商家.jpg'></image>
+        <view>广告合作</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='bg'></view>
